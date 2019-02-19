@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "款式详情",
+  "usingComponents":{
+    "selectCompo":"/components/selectCompo/selectCompo",
+    "sizeList":"/components/sizeList/sizeList",
+    "colla":"/components/colla/colla"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "总缺少单款单色",
+  "usingComponents": {
+    "loading": "/components/loading/loading",
+    "topTab": "/components/topTab/topTab",
+    "noData": "/components/noData/noData"
+  }
+}

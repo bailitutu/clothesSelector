@@ -1,0 +1,40 @@
+.topTip{
+  padding-left:20rpx;
+  margin-top: 24rpx;
+  display: block;
+}
+.form_item{
+  width: 100%;
+  margin-top:20rpx;
+}
+.form_item .form_section{
+  padding:24rpx 80rpx 0 20rpx;
+  border-bottom:1px solid #e2e2e2;
+  height:100rpx;
+  position: relative;
+}
+.form_item .form_section input{
+  height:100%;
+  width:100%;
+  line-height:88rpx;
+}
+.getCode{
+  min-width:176rpx;
+  height:60rpx;
+  font-size:24rpx;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  text-align: center;
+  color:#03A863;
+  border:1px solid #03A863;
+  position: absolute;
+  top:50%;
+  right:0;
+  z-index: 100;
+  margin-top:-30rpx;
+  overflow:hidden;
+}
+.getCode.disabled{
+  color:#707070;
+  border:1px solid #707070;
+}

@@ -1,0 +1,19 @@
+/* 进入标签 */
+.go_item{
+  width:100%;
+  background: #fff;
+  height:90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 40rpx;
+}
+.go_title{
+  font-size:28rpx;
+  color:#707070;
+}
+.go_item>image{
+  width:16rpx;
+  height:30rpx;
+}

@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/stylePages/index/index",
+    "pages/stylePages/matchDetail/matchDetail",
+    "pages/stylePages/orderDeal/orderDeal",
+    "pages/orderPages/orderDetail/orderDetail",
+    "pages/stylePages/waitCheck/waitCheck",
+    "pages/stylePages/noPass/noPass",
+    "pages/stylePages/hasPass/hasPass",
+    "pages/stylePages/noMatch/noMatch",
+    "pages/stylePages/hasMatch/hasMatch",
+    "pages/stylePages/styleDetail/styleDetail",
+    "pages/stylePages/colorSet/colorSet",
+    "pages/minePages/login/login",
+    "pages/stylePages/colorSel/colorSel",
+    "pages/shopPages/stockList/stockList",
+    "pages/shopPages/lackList/lackList",
+    "pages/shopPages/shopDetail/shopDetail",
+    "pages/shopPages/index/index",
+    "pages/orderPages/index/index",
+    "pages/minePages/index/index",
+    "pages/minePages/changePass/changePass",
+    "pages/minePages/setPass/setPass",
+    "pages/minePages/forgetPass/forgetPass",
+    "pages/shopPages/collectList/collectList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#03A863",
+    "navigationBarTitleText": "选款师",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "backgroundColor": "#03A863",
+    "color": "#CCEDDF",
+    "selectedColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/stylePages/index/index",
+        "text": "款式",
+        "iconPath": "images/tab_style.png",
+        "selectedIconPath": "images/tab_style_active.png"
+      },
+      {
+        "pagePath": "pages/orderPages/index/index",
+        "text": "订单",
+        "iconPath": "images/tab_order.png",
+        "selectedIconPath": "images/tab_order_active.png"
+      },
+      {
+        "pagePath": "pages/shopPages/index/index",
+        "text": "商户",
+        "iconPath": "images/tab_shop.png",
+        "selectedIconPath": "images/tab_shop_active.png"
+      },
+      {
+        "pagePath": "pages/minePages/index/index",
+        "text": "我的",
+        "iconPath": "images/tab_mine.png",
+        "selectedIconPath": "images/tab_mine_active.png"
+      }
+    ]
+  }
+}

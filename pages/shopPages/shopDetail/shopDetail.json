@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "商户详情",
+    "usingComponents": {
+      "colla": "/components/colla/colla",
+      "goItem": "/components/goItem/goItem"
+    }
+
+}

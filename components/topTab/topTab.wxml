@@ -1,0 +1,8 @@
+<view class='top_tab bb'>
+    <view class='top_tab_cell {{ current == 1 ? "active" :"" }}' data-current='1' catchtap='_tabTap'>
+      <view class='top_tab_inner' >{{tabOne}}</view>
+    </view>
+    <view class='top_tab_cell {{ current == 2 ? "active" :"" }}' data-current='2' catchtap='_tabTap'>
+      <view class='top_tab_inner' >{{tabTwo}}</view>
+    </view>
+</view>

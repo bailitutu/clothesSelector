@@ -1,0 +1,65 @@
+.content{
+  height: 100%;
+  width: 100%;
+  flex: 3;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+.title{
+  padding:20rpx 30rpx 0;
+}
+.chart_item{
+  height:450rpx;
+  padding:30rpx 0 10rpx;
+}
+
+.hot_content{
+  height: 100%;
+  flex: 3;
+  overflow: hidden;
+}
+.hot_item{
+  height: 460rpx;
+  overflow:hidden;
+  flex:3;
+  position:relative;
+}
+canvas{
+  top:0;
+}
+.hot_item_cell{
+  width:100%;
+  height: 100%;
+  overflow: hidden;
+  padding:20rpx 0 10rpx;
+}
+
+/* 款式列表 */
+.style_li{
+  padding-right:40rpx;
+  height:88rpx;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  align-content:space-between;
+  align-items: center;
+}
+.style_cell{
+  padding:0 40rpx;
+  justify-content: flex-start;
+  align-items: center;
+}
+.color_box{
+  width:56rpx;
+  height:56rpx;
+  margin-right:20rpx;
+}
+.style_list{
+  height: 50%;
+  overflow-y:auto;
+  overflow-x:hidden; 
+  flex: 3;
+}
+.cell:last-child{
+  border-bottom: 1px solid #e2e2e2;
+}

@@ -1,0 +1,96 @@
+.body{
+  padding:0 20rpx;
+}
+/* 匹配 */
+.match_item{
+  padding:0 20rpx;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin-bottom:20rpx;
+}
+.match_item .match_cell{
+  height:140rpx;
+  background: #fff;
+  flex: 1;
+  margin-right:20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  border-radius: 12rpx;
+  padding-left:10rpx;
+}
+.match_item .match_cell:last-child{
+  margin:0;
+}
+.match_cell>image{
+  width:120rpx;
+  height:120rpx;
+}
+.match_cell .match_inner{
+  height:100%;
+  flex: 2;
+  width:120rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+
+/* 审核 */
+.check_item{
+  width:100%;
+  padding:0 20rpx;
+}
+.check_cell{
+  height:140rpx;
+  width:100%;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  background: #fff;
+  margin-top:20rpx;
+  border-radius: 10rpx;
+}
+.check_title{
+  width:180rpx;
+  text-align: center;
+  margin-left:20rpx;
+}
+.check_cell .check_img{
+  width:120rpx;
+  height:120rpx;
+  margin-left:10rpx;
+  text-align: center;
+  overflow:hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.check_value{
+  width:160rpx;
+}
+/* .check_cell .check_img:after{
+  content:'';
+  height: 80%;
+  width: 1rpx;
+  position: absolute;
+  top:10%;
+  left:0;
+  z-index: 100;
+  background:#e2e2e2;
+} */
+.check_img>image{
+  height:120rpx;
+  width:120rpx;
+  border-radius: 10rpx;
+}

@@ -1,0 +1,37 @@
+<view class="body" wx:if='{{isReady}}'>
+  <view class='userInfo'>
+   <view class='userHead' catchtap='changeHead'>
+      <image src='{{fbHead || "/images/head.png"}}' class='full'></image>
+    </view>
+    <!-- <image src='/images/head.png' class='userHead'></image> -->
+    <view class='fs-32 fc-33 mt-10'>{{pageData.name}}</view>
+    <view class='fs-28 fc-33 mt-10'> {{pageData.phone}}</view>
+    <view class='labelList'>
+      <text class='label-cell' wx:for='{{pageData.labelList}}' wx:key='label'>{{item.name}}</text>
+    </view>
+  </view>
+  <view class='full_two_item mt-50' >
+    <view class='full_two_cell'>
+        <view class='fc-main fs-32'>{{pageData.busNum}}</view>
+        <view class='fc-333 fs-24'>匹配商户</view>
+    </view>
+     <view class='full_two_cell'>
+        <view class='fc-main fs-32'>{{pageData.styleNum}}</view>
+        <view class='fc-333 fs-24'>在线款式</view>
+    </view>
+  </view> 
+  <view class='mt-20'>
+    <goItem id="goChangePass" title='修改密码' target='忘记密码' ></goItem>  
+  </view>
+
+  <view class='plr-20 mb-20'>
+    <button type='button' class='f_btn mt-50' catchtap='loginOutTap' >退出登录</button>
+  </view>
+  
+</view>
+  <dialog id='dialogCompo' content="确认退出吗？" bind:confirmEvent="loginOut"></dialog>
+
+
+
+
+

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "匹配款式详情",
+  "usingComponents":{
+    "colla":"/components/colla/colla",
+    "shopInfo":"/components/shopInfo/shopInfo",
+    "sizeList":"/components/sizeList/sizeList"
+  }
+}

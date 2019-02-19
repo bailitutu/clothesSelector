@@ -1,0 +1,91 @@
+ <wxs src="../../filter/filter.wxs" module="filter" /> 
+
+<view class='body plr-20' wx:if='{{isReady}}'>
+  <view class='bra mt-20'  wx:if='{{ orderType == 1 }}'>
+     <shopInfo id="shopInfo" 
+        shopName='{{pageData.busInfo.busName}}' 
+        shopImg ='{{pageData.busInfo.busHead}}'
+        showPeo='true'
+        shopPeo='{{pageData.busInfo.busPeople}}'
+        shopPhone='{{pageData.busInfo.busPhone}}'
+        shopAddress='{{pageData.busInfo.busAddress}}'
+        currentStatus='{{filter.orderStatus(pageData.orderStatus)}}'
+        showRightStatus= 'true'
+     
+     
+      ></shopInfo>
+  </view>
+   
+  <view class='bra mt-20 bg-white' wx:else>
+    <view class='bb'>
+      <shopInfo id="shopInfo" 
+        showLeft='true' 
+        leftText='发货方'
+        shopName='{{pageData.senderInfo.senderName}}' 
+        shopImg ='{{pageData.senderInfo.senderHead}}'
+        shopAddress='{{pageData.senderInfo.senderAddress}}'
+        showPeo = 'true'
+        shopPeo = '{{pageData.senderInfo.senderPeople}}'
+        shopPhone = '{{pageData.senderInfo.senderPhone}}'
+      
+       ></shopInfo>
+    </view>
+    <view>
+      <shopInfo id="shopInfo" 
+         showLeft='true' 
+          leftText='收货方'
+          shopName='{{pageData.receiverInfo.receiverName}}' 
+          shopImg ='{{pageData.receiverInfo.receiverHead}}'
+          shopAddress='{{pageData.receiverInfo.receiverAddress}}'
+          showPeo = 'true'
+          shopPeo = '{{pageData.receiverInfo.receiverPeople}}'
+          shopPhone = '{{pageData.receiverInfo.receiverPhone}}'
+       ></shopInfo>
+    </view>
+    <view class='p-20 bt fc-33 fs-28'>当前状态：<text class='fc-main'>{{filter.orderStatus(pageData.orderStatus)}}</text></view>
+  </view>
+   <view class='logistic_compo'>
+    <view class='logistic_title'>
+      <image src='/images/logo.png'></image>
+      <text>{{ pageData.loginsticsInfo.loginstics}}  {{pageData.loginsticsInfo.loginsticsNumber}}</text>
+    </view>
+    <view class='logistic_data bg-white fc-33 fs-32 bra'>
+      <view class='data_title'>操作记录</view>
+      <view class='logisitc_list'>
+        <view class='logisitc_list_cell'  wx:for='{{pageData.loginsticsInfo.loginsticsArray}}' wx:key='logis'  >
+          <view class='cell_inner'>
+            <view class='sel_icon'>
+              <image src='/images/icon_selected.png' wx:if='{{!index}}'></image>
+              <image src='/images/icon_selected_no.png' wx:if='{{index}}'></image>
+            </view>
+            <text class='fs-28 fc-33'>{{item.time}}  {{item.msg}}</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>  
+
+  <view class='sec_title'>商品详情</view>
+  <view  class='goodsInfo bra' wx:for='{{pageData.styleList}}' wx:for-item='style' wx:for-index='styleIndex' wx:key='styleIndex'>
+
+
+    <view class='style_compo'>
+      <image src='{{style.styleHead}}'></image>
+      <view class='style_info'> 
+        <view class='fs-28 fc-33'>{{style.styleName}}</view>
+        <text class='fs-24 fc-70'>款式编号：{{style.styleNumber}}</text>
+        <view class='style_detail fs-24  fc-70'>
+            <text style='margin-right:40rpx;'>总件数：<text class='fc-main'>{{style.num}} 件</text></text>
+            <text>单款单色：<text class='fc-main'>{{style.colorNum}} 个</text></text>
+        </view>
+      </view>
+    </view>  
+
+    <sizeList wx:for='{{ style.colorList}}'  wx:for-item='colorInfo' cell='{{colorInfo}}'  wx:key='colorIndex' ></sizeList>
+  </view>
+
+
+
+
+</view>

@@ -1,0 +1,23 @@
+<view class='body body_flex'>
+  <view class='bsf'>
+    <topTab id='topTab' tabOne='缺少款式' tabTwo='缺少颜色' class='bb'  bind:tabTap='tabTap'></topTab>
+  </view>
+  <view class='list_item' id='list_item'>
+    <scroll-view scroll-y='true' class='list_sec' style='height:{{scrollH}}px'  bindscrolltolower='moreData'>
+      <noData wx:if='{{noData}}'></noData>  
+      <view class='list_inner bg-white bra plr-20'>
+        <view class='list_cell s_row fs-28 bb' wx:for="{{list}}" wx:key='index'> 
+          <text class='fc-70'>{{item.name}}：</text>
+          <text class='fc-33'>缺少单款单色：{{item.num}} 个</text>
+        </view>
+      </view>
+
+      <loading isShow='{{noData}}'  noMore='{{noMore}}'></loading> 
+    
+    </scroll-view>
+  </view>
+</view>
+
+
+
+

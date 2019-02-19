@@ -1,0 +1,139 @@
+<view class='body'>
+  <view class='style_item bra'>
+      <view class='style_cell bb' wx:for='{{styleList}}' wx:key='index' >
+          <view class='style_img'>
+          <image src='{{item.image}}' class='full bra'></image>
+          </view>
+          <view class='style_info'>
+              <view class='fc-33 fs-28'>{{item.styleName}}</view>
+              <view class='fs-24 fc-70'>颜色：{{item.colorStr}} </view>
+              <view class='s_row'>
+                  <view class='fs-24 fc-70 wl'> 数量：<text class='fc-main'>{{item.styleNum}} 件</text> </view>
+                  <view class='fs-24 fc-70 wl'> 单款单色：<text class='fc-main'>{{item.colorNum}} 个</text> </view>
+                  <view class='fs-24 fc-70'>采购价:<text class='fc-red'>￥{{item.buyPrice}}</text> </view>
+              </view>
+          </view>
+      </view>
+      <view class='style_total fc-33 fs-28 '>
+          合计: <text class='fc-red'>￥{{totalPrice}}</text>
+      </view>
+  </view>
+
+    <!-- 选择仓库 -->
+
+    <view class='selectDepot s_row bg-white bra' catchtap='selectDepot'>
+        <text class='fc-70 fs-28'>收货仓库</text>
+        <view class='s_row fs-28'>
+            <text class='fc-70 mr-10' wx:if='{{!depotName.length}}'>请选择</text>
+             <text class='fc-33 mr-10' wx:else>{{depotName}}</text> 
+            <image class='icon_go' src='/images/Shape.png'></image>
+        </view>
+    </view>
+    <!-- 厂家信息 -->
+    <view class='input_item bra mt-20 bg-white'>
+      <view class='input_cell'>
+        <text class='input_title fc-70'>厂家名称</text>
+        <input type='text' placeholder='请输入' placeholder-class='fc-b2' bindinput='changeInput' data-param='supplyName'  value='{{supplyName}}'></input>
+      </view>
+      <view class='input_cell'>
+        <text class='input_title fc-70'>厂家负责人</text>
+        <input type='text' placeholder='请输入' placeholder-class='fc-b2'  bindinput='changeInput' data-param='supplyPeople' value='{{supplyPeople}}'></input>
+      </view>
+            <view class='input_cell'>
+        <text class='input_title fc-70'>地址</text>
+        <input type='text' placeholder='请输入' placeholder-class='fc-b2'  bindinput='changeInput' data-param='supplyAddress' value='{{supplyAddress}}'></input>
+      </view>
+            <view class='input_cell'>
+        <text class='input_title fc-70'>联系方式</text>
+        <input type='number' placeholder='请输入' placeholder-class='fc-b2'  bindinput='changeInput' data-param='supplyPhone' value='{{supplyPhone}}' minLength='7' maxlength='11'></input>
+      </view>
+    </view>
+
+    <view class='pay_way_item s_row plr-20'>
+        <text class='fc-33 fs-32'>收款方式</text>
+        <view class='pay_way s_row'>
+            <view class='pay_way_cell s_row' catchtap='selectPayWay' data-val='3'>
+                <view class='mr-20'>
+                   <image class='sel_icon' hidden='{{paymentWay != "3"}}' src='/images/icon_selected.png'></image> 
+                  <image class='sel_icon' hidden='{{paymentWay == "3"}}' src='/images/icon_selected_no.png'></image>
+                </view>
+                <text class='fc-70 fs-28'>银行卡</text>
+            </view>
+            <view class='pay_way_cell s_row' catchtap='selectPayWay' data-val='1'>
+                <view class='mr-20'>
+                   <image class='sel_icon' hidden='{{paymentWay != "1" }}' src='/images/icon_selected.png'></image> 
+                  <image class='sel_icon' hidden='{{paymentWay == "1"}}' src='/images/icon_selected_no.png'></image>
+                </view>
+                <text class='fc-70 fs-28'>微信</text>
+            </view>
+            <view class='pay_way_cell s_row' catchtap='selectPayWay' data-val='2'>
+                <view class='mr-20'>
+                   <image class='sel_icon' hidden='{{paymentWay != "2"}}' src='/images/icon_selected.png'></image> 
+                  <image class='sel_icon' hidden='{{paymentWay == "2"}}' src='/images/icon_selected_no.png'></image>
+                </view>
+                <text class='fc-70 fs-28'>支付宝</text>
+            </view>
+        </view>
+    </view>
+    <view class='ewm_item ' hidden='{{paymentWay == "3"}}'>
+      <view class='ewm_inner oh bra bg-white' catchtap='uploadImg' >
+        <view class='ewm_upload' hidden='{{ ewmImg.length }}' >
+            <image class='uploadbg'  src='/images/upload.png'></image> 
+            <text class='fc-70 fs-28 mt-20'>点击上传图片</text>
+        </view>
+        <image hidden='{{!ewmImg.length}}' src='{{ewmImg}}' class='full' mode='aspectFit' ></image>
+      </view>
+    </view>
+    <view class='input_item bra bg-white' hidden='{{paymentWay != "3"}}'>
+      <view class='input_cell'>
+        <text class='input_title fc-70'>银行名称</text>
+        <input type='text' placeholder='请输入' placeholder-class='fc-b2' bindinput='changeInput' data-param='bank' value='{{bank}}'></input>
+      </view>
+      <view class='input_cell'>
+        <text class='input_title fc-70'>卡号</text>
+        <input type='number' placeholder='请输入' maxlength='19' placeholder-class='fc-b2' bindinput='changeInput' data-param='cardNumber' value='{{cardNumber}}'></input>
+      </view>
+      <view class='input_cell'>
+        <text class='input_title fc-70'>持卡人</text>
+        <input type='text' placeholder='请输入' placeholder-class='fc-b2' bindinput='changeInput' data-param='cardPeople' value='{{cardPeople}}'></input>
+      </view>
+      <view class='input_cell'>
+        <text class='input_title fc-70'>联系电话</text>
+        <input type='number' placeholder='请输入' placeholder-class='fc-b2' bindinput='changeInput' data-param='telephone' value='{{telephone}}'></input>
+      </view>
+    </view>
+    
+    <view class='title fc-33 fs-32'>
+        账期
+    </view>
+
+    <view class='input_item bra bg-white'>
+       <view class='sel_cell fs-28 s_row' catchtap='selectPayTime' data-val='0'>
+          <text class='input_title fc-70'>现付</text>
+          <view class='mr-10'>
+             <image class='sel_icon' hidden='{{paymentDays != 0}}' src='/images/icon_selected.png'></image> 
+            <image class='sel_icon' hidden='{{paymentDays == 0}}' src='/images/icon_selected_no.png'></image>
+          </view>
+       </view>
+        <view class='sel_cell fs-28 s_row' catchtap='selectPayTime' data-val='30'>
+          <text class='input_title fc-70'>一个月</text>
+          <view class='mr-10'>
+             <image class='sel_icon' hidden='{{paymentDays != 30}}' src='/images/icon_selected.png'></image> 
+            <image class='sel_icon' hidden='{{paymentDays == 30}}' src='/images/icon_selected_no.png'></image>
+          </view>
+       </view>
+        <view class='sel_cell fs-28 s_row' >
+          <text class='input_title fc-70'>到账日期</text>
+          <view class='s_row mr-10 wf'>
+            <input type='number' placeholder='请输入' placeholder-class='fc-b2'  bindinput='changeInput' data-param='paymentDays' value='{{paymentDays}}'></input>
+            <text class='fc-33'>天</text>
+          </view>
+       </view>
+    </view>
+
+    <view class='btn_item'>
+      <button type='button' class='f_btn' catchtap='submitOrder' >确认提交</button>
+    </view>
+
+
+</view>

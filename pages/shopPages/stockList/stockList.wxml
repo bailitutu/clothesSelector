@@ -1,0 +1,38 @@
+<view class='body body_flex'>
+  <view class='bsf'>
+    <topTab id='topTab' tabOne='库存预警' tabTwo='库龄预警'   bind:tabTap='tabTap'></topTab>
+   </view>
+  <view class='list_item' id='list_item'>
+  <scroll-view scroll-y='true' class='list_sec' style='height:{{scrollH}}px'  bindscrolltolower='moreData'>
+      <noData wx:if='{{noData}}'></noData>  
+    
+      <view class='list_cell ss_row bg-white m-20 bra' wx:for='{{list}}' wx:key='index' >
+        <image src='{{item.singleHead}}' class='style_img'></image>
+        <view class='list_detail'>
+            <view class='fc-33 fs-32'>{{item.singleName}}</view>
+            <view class='ss_row'>
+              <text class='fc-b2 fs-24 wl'>单品编号：{{item.number}}</text>
+              <text class='fc-70 fs-24' wx:if='{{current== 1}}'>预警值：<text class='fc-main'>{{item.warnNum}}</text></text>
+              <text class='fc-70 fs-24' wx:else>库龄预警值：<text class='fc-main'>{{item.warnNum}}天</text></text>
+            </view>
+            <view class='ss_row'>
+              <text class='fc-70 fs-24 wl'>颜色尺码：<text class='fc-main'>{{item.colorSize}}</text></text>
+              <text class='fc-70 fs-24' wx:if='{{current== 1}}'>当前库存：<text class='fc-main'>{{item.currentVal}}</text></text>
+              <text class='fc-70 fs-24' wx:else>当前：<text class='fc-main'>{{item.currentVal}}天</text></text>
+            </view>
+        </view>
+      </view>
+
+    <loading isShow='{{noData}}'  noMore='{{noMore}}'></loading> 
+
+  </scroll-view>
+</view>
+      
+  
+  
+
+</view>
+
+
+
+

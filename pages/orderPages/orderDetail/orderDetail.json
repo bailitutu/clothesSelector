@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "usingComponents":{
+    "shopInfo": "/components/shopInfo/shopInfo",
+    "sizeList": "/components/sizeList/sizeList"
+  }
+}

@@ -1,0 +1,118 @@
+.tac{
+  text-align: center;
+}
+.tal{
+  text-align: left;
+}
+.tar{
+  text-align: right;
+}
+.oh{
+  overflow:hidden;
+}
+.fc-main{
+    color:#03A863;
+}
+.fc-33{
+  color: #333333;
+}
+.fc-b2{
+  color: #b2b2b2;
+}
+.fc-fff{
+  color:#fff;
+}
+.fc-70{
+  color:#707070;
+}
+.fc-red{
+  color:red;
+}
+.bra{
+  -webkit-border-radius: 12rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+.bb{
+  border-bottom:1px solid #e2e2e2;
+}
+.bt{
+  border-top:1px solid #e2e2e2;
+}
+.bg-main{
+  background-color:#03A863;
+}
+.bg-f4{
+  background-color:#f4f4f4; 
+}
+.bg-white{
+    background-color:#fff; 
+}
+
+.fs-22{
+  font-size:22rpx;
+}
+.fs-24{
+  font-size:24rpx;
+}
+.fs-28{
+  font-size:28rpx;
+}
+.fs-32{
+  font-size:32rpx;
+}
+.fs-36{
+  font-size:36rpx;
+}
+
+.bc{
+  color:#e2e2e2;
+}
+
+.mt-100{
+  margin-top:100rpx;
+}
+.mt-80{
+  margin-top:80rpx; 
+}
+.mt-40{
+  margin-top:40rpx;
+}
+.mt-50{
+  margin-top:50rpx;
+}
+.mt-20{
+  margin-top:20rpx;
+}
+.mt-10{
+  margin-top:10rpx;
+}
+.mb-80{
+  margin-bottom:80rpx;
+}
+.mb-20{
+  margin-bottom: 20rpx;
+}
+.mr-10{
+  margin-right:10rpx;
+}
+.mr-20{
+  margin-right:20rpx;
+}
+
+.plr-10{
+  padding:0 10rpx;
+}
+.plr-20{
+  padding:0 20rpx;
+}
+.p-30{
+  padding:30rpx;
+}
+.pb-20{
+  padding-bottom:20rpx;
+}
+.icon_go{
+  width:16rpx;
+  height:30rpx;
+}

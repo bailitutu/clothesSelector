@@ -1,0 +1,4 @@
+  <view class='noData_compo'  >
+    <image src='/images/noData.png' class='noDataImg' ></image> 
+    <view >{{title}}</view>
+  </view>

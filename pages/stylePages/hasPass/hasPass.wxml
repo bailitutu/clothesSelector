@@ -1,0 +1,36 @@
+<view class='body body_flex'>
+  <topSearch id='topSearch' holderText='搜索名称' bind:searchTap="searchOrder"></topSearch>
+    <view class='list_item' id='list_item'>
+  <scroll-view  class='match_list' scroll-y='true' style='height:{{scrollH}}px'  bindscrolltolower='moreData'>
+
+    <noData wx:if='{{noData}}'></noData>  
+    <view class='match_cell bra' wx:for='{{list}}' wx:key='index' catchtap='checkDetail' data-id='{{item.id}}'> 
+      <view class='goods_cell'>
+          <view class='style_cell'>
+             <view class='style_img bra'>
+              <image src='{{item.image}}' class='full bra'></image>
+             </view>
+             <view class='style_info'>
+                 <view class='fc-33 fs-28'>{{item.styleName}}</view>
+                  <view class='fs-24 fc-70'>款式编号：{{item.number}}  </view>
+                  <view class='ss_row'>
+                      <view class='fs-24 fc-70 wl'> 数量：<text class='fc-main'>{{item.num}} 件</text> </view>
+                      <view class='fs-24 fc-70'> 单款单色：<text class='fc-main'>{{item.colorNum}} 个</text> </view>
+                  </view>
+             </view>
+          </view>
+        
+        </view>
+
+        <view class='goods_footer s_row bt plr-20'>
+          <text class='fs-24 fc-70'>通过时间：{{item.passTime}}</text>
+         <view class='fs-24 fc-70'>零售价： <text class='fc-red'>￥{{item.price}}</text></view>
+        </view>  
+
+    </view>
+
+    <loading isShow='{{noData}}'  noMore='{{noMore}}'></loading> 
+  </scroll-view>
+  </view>
+</view>
+

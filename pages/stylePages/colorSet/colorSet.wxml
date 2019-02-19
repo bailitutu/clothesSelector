@@ -1,0 +1,41 @@
+<view class='body plr-20'>
+    <view class='mt-20 bg-white bra'>
+        <view class='go_item' catchtap='selectColor' >
+          <view class='go_title'>选择颜色</view>
+          <view class='sel_data s_row' >
+            <view class='color_box mr-10' hidden='{{!colorVal}}' style='background:{{colorVal}};'></view>
+            <text class='fc-33 fs-28 mr-10' hidden='{{!colorVal}}'>{{colorName}}</text>
+            <text class='fc-b2 fs-28 mr-10'  hidden='{{colorVal}}'>请选择</text>
+            <image class='icon_go' src='/images/Shape.png'></image>
+          </view>
+        </view>
+    </view>
+
+    <view class='size_sec mt-20'>
+      <view class='size_head'>
+        <text class='fs-32 fc-33'>尺码</text>
+      </view>
+
+
+      <view class='size_list oh'>
+          <view class='mt-20 bra' wx:for='{{sizeList}}' wx:key='{{size}}'  >
+              <colla title='{{ item.typeName }}' noTopBorder='true' >
+                <view class='plr-20 bg-white'>
+                  <view class='size_set ' wx:for='{{item.subList}}' wx:key='sizeSub' wx:for-item='attr' wx:for-index='attrIndex' >
+                    <text class='fc-70 fs-28 attr_label'>{{attr.name}}</text>
+                    <input class='size_input fc-33 fs-28'  type='digit'  bindblur='inputBlur'  value='{{attr.value}}'  bindinput='changeVal' data-sizeindex='{{index}}' data-index='{{attrIndex}}' data-id='{{attr.id}}' placeholder='请输入'></input>
+                    <text class='fc-70 fs-28' style='width:40rpx;'>{{attrIndex == (item.subList.length-1) ? "件":  "(cm)" }}</text>
+
+                  </view>
+                </view>
+              </colla>
+          </view>
+
+      </view>
+  
+    </view> 
+    <view class='mt-40 mb-80'>
+        <button type='button' class='f_btn' catchtap='submit'>确认</button>
+    </view>
+
+</view> 

@@ -1,0 +1,28 @@
+.list_sec{
+  width:100%;
+  white-space: nowrap;
+}
+.list_item{
+  height:100%;
+  width: 100%;
+  flex: 2;
+  display: flex;
+}
+.list_cell{
+  margin:20rpx 20rpx 0 20rpx;
+  padding:20rpx;
+  height: 180rpx;
+}
+.list_cell>image{
+  margin-right:20rpx;
+}
+.list_cell .list_detail{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: stretch;
+}
+.wl{
+  width:320rpx;
+}

@@ -1,0 +1,94 @@
+
+
+.go_item{
+  width:100%;
+  background: #fff;
+  height:90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 40rpx;
+}
+.go_title{
+  font-size:28rpx;
+  color:#707070;
+}
+.go_item .go_detail{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.go_item .go_detail>image{
+  width:16rpx;
+  height:30rpx;
+  margin-left:20rpx;
+}
+
+/* 搜索部分
+ */
+.search_item{
+  width: 100%;
+}
+.search_item .search_inner{
+  height:76rpx;
+  margin:20rpx;
+  background: #fff;
+}
+.search_inner>image{
+  width: 40rpx;
+  height: 40rpx;
+  margin:0 20rpx ;
+}
+
+
+.list_tab{
+  height:88rpx;
+  width:100%; 
+  background: #fff;
+}
+
+.list_tab_cell{
+  font-size:28rpx;
+  color:#333;
+  padding:0 40rpx;
+}
+.list_tab_cell.active{
+  color: #03A863;
+}
+.list_item{
+  height:100%;
+  width: 100%;
+  flex: 2;
+  display: flex;
+}
+
+
+.list_scroll{
+  width:100%;
+  white-space: nowrap;
+}
+
+.list_cell{
+  margin:20rpx;
+  background: #fff;
+}
+
+.sales_cell{
+  height:92rpx;
+  text-align: center;
+  display: flex;
+  justify-content:space-around;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+}
+.sales_cell .c_col{
+  width:33.33%;
+  border-right: 1px solid #e2e2e2;
+  padding:0 20rpx;
+}
+.sales_cell .c_col:last-child{
+  border:none;
+}

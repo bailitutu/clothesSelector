@@ -1,0 +1,27 @@
+<view class='body plr-20'>
+  <view class='logo_item'>
+      <image src='/images/login.png'></image>
+      <view class='mt-20 fs-36 fc-33'>你喜欢的，才是时尚！</view>
+  </view>
+  
+  <view class='form_item'>
+      <form>
+        <view class="form_section">
+          <input class='fs-28' placeholder="请输入账号" bindinput='inputAccount' confirm-type="next" auto-focus/>
+        </view>
+        <view class="form_section">
+          <input type='text' class='fs-28' wx-if='{{showPass}}'  bindinput='inputPass' value='{{password}}' confirm-type="done"   placeholder="请输入密码" />
+          <input type='password'  class='fs-28' wx-if='{{!showPass}}' bindinput='inputPass' value='{{password}}' confirm-type="done" placeholder="请输入密码" />
+          <view class="pass_icon" bindtap='showPassHandle'>
+             <image src='/images/pass_hide.png' class='pass_hide' wx-if='{{!showPass}}'></image> 
+             <image src='/images/pass_show.png' class='pass_show' wx-if='{{showPass}}'></image> 
+          </view>
+        </view>
+      </form>
+  </view>
+
+  <button type='button' class='f_btn mt-100' form-type='submit' catchtap='submitTap'  loading='{{isSubmit}}'>登录</button>
+  <view class='forget_item'>
+    <text class='forget_btn fs-24 fc-33' catchtap='forgetPass'>忘记密码</text>
+  </view>
+</view>

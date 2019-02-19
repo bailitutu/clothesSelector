@@ -1,0 +1,103 @@
+<view class='body plr-20'>
+    <view class='upload_item'>
+        <view class='img_sec'>
+            <view class='img_sec_cell' wx:for='{{imgList}}' wx:key='image' wx:for-item='img' wx:for-index='imgIndex' bindtouchend='touchEnd' catchtap='previewImg'  catchlongtap='removeImg' data-index='{{imgIndex}}'  >
+              <image src='{{img.imgUrl}}'></image>
+            </view>
+             
+            <view class='img_sec_cell ' catchtap='addImg' hidden='{{imgList.length == 16}}'>
+              <image class='image_sec add_img' src='/images/add_img.png'></image>
+            </view>
+        </view>
+    </view>
+    <view class='sec bg-white bra mt'>
+        <view class='sec_cell bb'>
+          <text class='fc-70 fs-28'>款式名称</text>
+          <input type='text' placeholder='请输入款式名称'  value='{{styleName}}' bindinput='changeInput' data-param='styleName' class='fs-28 fc-33'></input>
+        </view>
+        <view class='sec_cell bb'>
+          <text class='fc-70 fs-28'>采购价(元)</text>
+          <input type='digit' placeholder='请输入价格' value='{{buyPrice}}' bindinput='changeInput' data-param='buyPrice' class='fs-28 fc-33'></input>
+        </view>
+        <view class='sec_cell bb'>
+          <text class='fc-70 fs-28'>批发价(元)</text>
+          <input type='digit' placeholder='请输入价格（选填）'  value='{{wholesalePrice}}' bindinput='changeInput' data-param='wholesalePrice' class='fs-28 fc-33'></input>
+        </view>
+        <view class='sec_cell bb'>
+          <text class='fc-70 fs-28'>零售价(元)</text>
+          <input type='digit' placeholder='请输入价格' bindinput='changeInput'  value='{{retailPrice}}' data-param='retailPrice' class='fs-28 fc-33'></input>
+        </view>
+        <view class='stylePicker s_row'>
+          <view class="fc-70 fs-28">款式分类</view>
+          <view class='s_row'>
+             <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+              <view class="fc-b2 fs-28 mr-10 picker_text" hidden='{{styleTypeId}}'>请选择</view> 
+               <view class="picker fc-70 fs-28 mr-10 picker_text" hidden='{{!styleTypeId}}'>
+                {{multiArray[0][multiIndex[0]]}}/{{multiArray[1][multiIndex[1]]}}/{{multiArray[2][multiIndex[2]]}}
+              </view> 
+            </picker>
+              <image class='icon_go' src='/images/Shape.png'></image>
+          </view>
+        </view>
+    </view>
+
+    <view class='switch_item  bg-white bra mt-20'>
+        <view class='s_row'>
+          <text class='fc-70 fs-28'>百搭款</text>
+          <switch checked='{{isCollocation}}' bindchange="switchChange" color='#03a863'/>
+        </view>
+    </view>
+    <view class='fc-33 fs-32 mt-20 plr-20' hidden='{{!styleTypeId}}'>款式详情</view>
+    <view class='styleDetailList bg-white plr-20 bra mt-20'>
+        <view class="bb" wx:for='{{styleDetailList }}' wx:key='styleDetail' wx:for-item='detail' wx:for-index='detailIndex'>
+          <selectCompo class='sel_detail'  title='{{detail.name}}' isShow='{{styleId.length>0}}'  data='{{detail.dataList}}' index='{{ detail.selIndex}}' data-index='{{detailIndex}}' bind:pickerChange='selectClick'  ></selectCompo>
+        </view>
+    </view> 
+    <view class='sizeItem mt-20 bg-white bra' wx:if='{{styleTypeId}}'>
+     <selectCompo id='sel_sizeType'  title='尺码分类' isShow='{{sizeTypeId}}'  data='{{sizeTypeList}}' index='{{sizeTypeIndex}}'  bind:pickerChange='selectSizeClick'  ></selectCompo>
+    </view>
+    <view class='color_sec_head mt-20'>
+        <text class='fc-33 fs-32 plr-20'>颜色尺码</text>
+        <button class='normal_btn fc-fff addBtn active' catchtap='addColorSize' >添加</button>
+    </view>
+    <view class='size_list'>
+
+      <view class='color_cell mt-20 bra oh bg-white' wx:for='{{colorList}}' wx:key='colorLi' wx:for-item='color' wx:for-index='colorIndex'>
+        <view class='color_cell_head s_row'>
+            <view class='size_color'>
+                <text class='color_label' style='background:{{color.color}};'></text>
+                <text class='fc-33 fs-28'>{{color.colorName}}</text>
+            </view>
+            <view class='fs-28 fc-main plr-20' catchtap='deleteColor' data-index='{{colorIndex}}'>删除</view>
+        </view>
+        <view>
+          <colla title='合计件数' content='{{color.total}}件' showContent='true'>
+            <view class='plr-20'>
+              <view class='s_row size_cell bb' wx:for='{{color.sizeList}}' wx:if='{{size.sizeNum > 0 }}' wx:key='size' wx:for-item='size' wx:for-index='sizeIndex'>
+                  <text class='fc-33 fs-28'>{{size.sizeName}}</text>
+                  <text class='fc-33 fs-28'>{{size.sizeNum}}件</text>
+              </view>
+            </view> 
+          </colla>
+        
+        </view>
+      </view>
+    </view>
+   <view class='bra oh mt-20' >
+    <colla title='选款师定位' noTopBorder='true'>
+    <view class='tag_list bg-white'>
+         <text class='tag_cell' wx:for='{{labelList}}' wx:key='styleLabelKey' wx:for-item='styleLabel'>{{styleLabel.name}}</text> 
+    </view>
+    </colla>
+  </view> 
+
+    <view class='mt-40 mb-80'>
+      <button type='button' class='f_btn' catchtap='submit'>确认</button>
+    </view>
+
+
+
+</view>
+
+
+

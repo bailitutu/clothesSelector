@@ -1,0 +1,43 @@
+   <view class='logistic_compo'>
+    <view class='logistic_title'>
+      <image src='/images/logo.png'></image>
+      <text>百世快递  16287835445</text>
+    </view>
+    <view class='logistic_data bg-white fc-33 fs-32 bra'>
+      <view class='data_title'>操作记录</view>
+      <view class='logisitc_list'>
+        <view class='logisitc_list_cell'>
+          <view class='cell_inner'>
+            <view class='sel_icon'>
+              <image src='/images/icon_selected.png'></image>
+            </view>
+            <text class='fs-28 fc-33'>2018.5.3 15：00  到金华市【义乌运转中心】</text>
+          </view>
+        </view>
+          <view class='logisitc_list_cell'>
+          <view class='cell_inner'>
+            <view class='sel_icon'>
+              <!-- <image src='/images/icon_selected.png'></image> -->
+            </view>
+            <text class='fs-28 fc-33'>2018.5.3 15：00  到金华市【义乌运转中心】</text>
+          </view>
+        </view>
+          <view class='logisitc_list_cell'>
+          <view class='cell_inner'>
+            <view class='sel_icon'>
+              <!-- <image src='/images/icon_selected.png'></image> -->
+            </view>
+            <text class='fs-28 fc-33'>2018.5.3 15：00  到金华市【义乌运转中心】</text>
+          </view>
+        </view>
+          <view class='logisitc_list_cell'>
+          <view class='cell_inner'>
+            <view class='sel_icon'>
+              <!-- <image src='/images/icon_selected.png'></image> -->
+            </view>
+            <text class='fs-28 fc-33'>2018.5.3 15：00  到金华市【义乌运转中心】</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>  

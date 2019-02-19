@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "颜色尺码",
+  "usingComponents":{
+    "colla":"/components/colla/colla",
+    "goItem":"/components/goItem/goItem"
+  }
+}

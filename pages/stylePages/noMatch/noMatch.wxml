@@ -1,0 +1,49 @@
+<view class='body body_flex'>
+  <topSearch id='topSearch' holderText='搜索名称' bind:searchTap="searchOrder"></topSearch>
+   <view class='list_item' id='list_item'>
+  <scroll-view  class='match_list' scroll-y='true' style='height:{{scrollH}}px' >
+    <noData wx:if='{{noData}}'></noData>  
+    <view class='match_cell bra' wx:for='{{list}}' wx:key='index' catchtap='selectTap' data-index='{{index}}'  data-id='{{item.id}}'>
+      <view class='goods_cell'>
+          <view class='shop_sel sel_box'>
+               <image class='sel_icon' hidden='{{!item.hasSel}}' src='/images/icon_selected.png'></image> 
+              <image class='sel_icon' hidden='{{item.hasSel}}' src='/images/icon_selected_no.png'></image>
+          </view>
+          <view class='style_cell'>
+             <view class='style_img'>
+              <image src='{{item.styleHead}}' class='full bra'></image>
+             </view>
+             <view class='style_info'>
+                 <view class='fc-33 fs-28 s_row'><text>{{item.styleName}}</text> <text class='editBtn fc-main fs-24' data-id='{{item.id}}' catchtap='editTap'>修改</text> </view>
+                  <view class='fs-24 fc-70'>颜色：{{item.colorStr}}</view> 
+                  <view class='ss_row'>
+                      <view class='fs-24 fc-70 wl'> 数量：<text class='fc-main'>{{item.styleNum}} 件</text> </view>
+                      <view class='fs-24 fc-70'> 单款单色：<text class='fc-main'>{{item.colorNum}} 个</text> </view>
+                  </view>
+             </view>
+          </view>
+        
+        </view>
+
+        <view class='goods_footer s_row bt plr-20'>
+          <text class='fs-24 fc-70'>添加时间：{{item.createTime}}</text>
+         <view class='fs-24 fc-70'>零售价：<text class='fc-red'>￥{{item.price}}</text></view>
+        </view>  
+
+    </view>
+
+         <loading isShow='{{noData}}'  noMore='{{noMore}}'></loading> 
+  </scroll-view>
+  </view>
+</view>
+
+<footerItem 
+  btnTwoText='开始匹配'
+  btnTwoDiable='{{!selectList.length}}'
+  bind:_btnTwoTap='startMatch'
+  selAll='{{ list.length == selectList.length && list.length>0 }}'
+  bind:_selAllTap='selAllTap'
+  showDel='{{selectList.length}}'
+  bind:_delTap='deleteStyle' 
+
+></footerItem>

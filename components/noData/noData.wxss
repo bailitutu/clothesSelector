@@ -1,0 +1,14 @@
+.noData_compo{
+  width:100%;
+  text-align:center;
+  padding-top:120rpx;
+}
+.noData_compo .noDataImg{
+  height:136rpx;
+  width:156rpx;
+}
+.noData_compo>view{
+  font-size:24rpx;
+  color: #b2b2b2;
+  margin-top:30rpx;
+}

@@ -1,0 +1,12 @@
+<view>
+  <view class='drop_down {{!isShow && !isNoBorder ? "nofooter" : ""}} {{ noTopBorder ? "noTopBorder": ""}}' catchtap='showTap' data-show='{{isShow}}' >
+    <view class='drop_inner fs-28' hidden='{{showStatus}}'><text>{{title}}</text></view>
+    <view class='drop_inner fs-28' hidden='{{!showStatus}}'><text>当前状态：</text><text class='fc-main'>{{title}}</text></view>
+    <view class='drop_dowm_right'>
+      <text class='fs-28 fc-33' wx:if='{{showContent}}'>{{content}}</text>
+      <image src='/images/down.png' class='{{ isShow ? "rotate" : "" }}'></image>
+    </view>
+  </view> 
+  <slot wx:if='{{isShow}}'></slot>
+</view>
+

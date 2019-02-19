@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的",
+  "usingComponents":{
+    "dialog":"/components/Dialog/dialog",
+    "goItem":"/components/goItem/goItem"
+  }
+}

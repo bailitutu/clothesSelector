@@ -1,0 +1,4 @@
+@import '../noPass/noPass';
+.body{
+  padding-bottom:0;
+}

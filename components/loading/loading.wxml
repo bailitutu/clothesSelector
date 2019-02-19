@@ -1,0 +1,9 @@
+<view class='loading_compo' hidden='{{isShow}}'>
+  <view class='loading_inner'  style='display:{{ noMore ? "none" : "flex"}} ;'>
+    <image src='../../images/loading.gif'></image>
+    <text >正在加载...</text>
+  </view>
+  <view class='loading_inner'   style='display:{{!noMore ? "none" : "flex"}} ;'>
+      <text>我是有底线的</text>
+  </view>
+</view>

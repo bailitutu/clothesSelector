@@ -1,0 +1,49 @@
+<view class="body" >
+  <view class='title tac fc-33 fs-32 mt-40'>精准匹配</view>
+  <view class='match_item plr-10 mt-20'>
+    <view class='match_cell '  catchtap='goPage' data-url='未匹配'>
+      <image src='{{pageData.noMatchImg}}' class='bra' mode='scaleToFill'></image>
+      <view class='match_inner fs-28 '>
+        <text class='fc-main'>{{pageData.noMatch || 0}} 款</text>
+        <text  class='fc-33'>未匹配</text>
+      </view>
+    </view>
+    <view class='match_cell' catchtap='goPage' data-url='已匹配'>
+      <image src='{{pageData.matchImg}}' class='bra' mode='scaleToFill'></image>
+      <view class='match_inner fs-28'>
+        <text class='fc-main '>{{pageData.match || 0}} 款</text>
+        <text class='fc-33'>已匹配</text>
+      </view>
+    </view>
+  </view>
+  <view class='title tac fc-33 fs-32 mt-20'>审核</view>
+  <view class='check_item'>
+    <view class='check_cell' catchtap='goPage' data-url='待审核'>
+        <view class='check_img'>
+          <image src='{{pageData.noReviewImg }}'></image>       
+        </view>
+        <view class='check_title fs-28 fc-33'>待审核</view>
+        <view class='check_value fs-28 fc-main'>{{pageData.noReview || 0}} 款</view>
+    </view>
+    <view class='check_cell' catchtap='goPage' data-url='未通过'>
+
+        <view class='check_img'>
+          <image src='{{pageData.noRefuseImg}}' ></image>       
+        </view>
+        <view class='check_title fs-28 fc-33'>未通过</view>
+        <view class='check_value fs-28 fc-main'>{{pageData.noRefuse || 0}} 款</view>
+    </view>
+    <view class='check_cell' catchtap='goPage' data-url='已通过'>
+        
+        <view class='check_img'>
+          <image src='{{pageData.hasRefuseImg}}' ></image>       
+        </view>
+        <view class='check_title fs-28 fc-33'>已通过</view>
+        <view class='check_value fs-28 fc-main'>{{pageData.hasRefuse || 0}} 款</view>
+    </view>
+  </view>
+
+    <view class='plr-10 mb-20' >
+        <button type='button' class='f_btn mt-50' catchtap='goPage' data-url='款式详情'  >添加款式</button>
+    </view>
+</view>

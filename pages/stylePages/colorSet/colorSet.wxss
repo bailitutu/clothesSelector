@@ -1,0 +1,62 @@
+/* 进入标签 */
+.go_item{
+  width:100%;
+  background: #fff;
+  height:90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 40rpx;
+}
+.go_title{
+  font-size:28rpx;
+  color:#707070;
+}
+.go_item>image{
+  width:16rpx;
+  height:30rpx;
+}
+
+.color_box{
+  width:56rpx;
+  height:56rpx;
+}
+
+
+
+.size_sec .size_head{
+  padding:0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: ceter;
+}
+
+.picker_cell{
+  width:auto;
+  height:60rpx;
+  border-radius: 30rpx;
+  border:1px solid #03A863;
+  padding:0 10rpx;
+  overflow: hidden;
+}
+.month_picker{
+  padding:20rpx;
+}
+
+.size_set{
+  height:88rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  border-bottom:1px solid #e2e2e2;
+}
+.size_set:last-child{
+  border:none;
+}
+.size_set .attr_label{
+  width: 200rpx;
+}

@@ -1,0 +1,4 @@
+<view class='go_item' catchtap='go' data-target='{{ target }}'>
+  <view class='go_title'>{{title}}</view>
+  <image src='/images/Shape.png'></image>
+</view>

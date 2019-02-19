@@ -1,0 +1,59 @@
+<view class='body body_flex'>
+  <view class='go_item' catchtap='checkLack' >
+    <view class='go_title'>总缺少单款单色</view>
+    <view class='go_detail'>
+      <text class='fs-24 fc-main'>{{ allLackColorNum}}</text>
+      <image src='/images/Shape.png'></image>
+    </view>
+  </view>
+  <view class='search_item'>
+      <view class='search_inner bra ss_row'>
+        <image src='/images/search_black.png'  catchtap='searchShop'></image>
+        <input type='text' class='fc-33 fs-28' placeholder='店铺名称/负责人/手机号' bindinput='inputSearch'  value='{{query}}' placeholder-class='fc-b2 fs-28' ></input>
+      </view>
+  </view>
+
+  <view class='list_tab bg-white s_row bsf'>
+    <view class='list_tab_cell {{filterType == "0" ? "active" : ""}}' data-type='0' catchtap='filterTap' >默认排序</view>
+    <view class='list_tab_cell {{filterType == "1" ? "active" : ""}}' data-type='1' catchtap='filterTap'>按库存</view>
+    <view class='list_tab_cell {{filterType == "2" ? "active" : ""}}' data-type='2' catchtap='filterTap'>按销量</view>
+  </view>
+  <view class='list_item' id='list_item'>
+    <scroll-view class='list_scroll' scroll-y='true' style='height:{{scrollH}}px;' bindscrolltolower='moreData'>
+    <noData wx:if='{{noData}}'></noData>  
+    
+    <view class='list_cell bra' wx:for='{{ shopList}}' wx:key='shop' data-busid='{{item.busId}}' catchtap='checkBusDetail'>
+        <view>
+          <shopInfo 
+             shopName='{{item.busName}}' 
+             shopImg ='{{item.busHead}}'
+             shopAddress='{{item.busAddress}}'
+              shopPeo='{{item.busPeople }}' 
+              showPeo='true'         
+              shopPhone='{{item.busPhone}}'
+           ></shopInfo>   
+        </view>
+        <view class='sales_cell mb-20'>
+            <view class='c_col'>
+              <text class='fs-24 fc-70 mt-10'>缺少单款单色</text>
+              <text class='fs-24 fc-main mt-10'>{{item.lackColorNum}} 个</text>
+            </view>
+            <view class='c_col'>
+              <text class='fs-24 fc-70 mt-10'>月销售</text>
+              <text class='fs-24 fc-main mt-10'>{{item.monthlySales}} 元</text>
+            </view>
+            <view class='c_col'>
+              <text class='fs-24 fc-70 mt-10'>库存</text>
+              <text class='fs-24 fc-main mt-10'>{{item.stockNum}} 件</text>
+            </view>
+        </view>
+    </view>
+    
+      <loading isShow='{{noData}}'  noMore='{{noMore}}'></loading>
+  </scroll-view>
+  </view>
+</view>
+
+
+
+

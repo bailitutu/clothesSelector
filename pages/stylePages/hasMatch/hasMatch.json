@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "已匹配",
+  "usingComponents": {
+    "topSearch": "/components/search/search",
+    "loading": "/components/loading/loading",
+    "footerItem": "/components/footerItem/footerItem",
+    "noData": "/components/noData/noData"
+  }
+}

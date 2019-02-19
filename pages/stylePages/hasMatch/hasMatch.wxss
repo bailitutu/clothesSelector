@@ -1,0 +1,133 @@
+@import '/templates/footerItem/footerItem';
+ 
+ .body{
+  padding-bottom:88rpx;
+} 
+
+.address{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.list_item{
+  display: flex;
+  width:100%;
+  flex: 3;
+  height:100%;
+}
+
+.match_list{
+  width:100%;
+  white-space: nowrap;  
+}
+.match_cell{
+  background: #fff;
+  margin:20rpx 20rpx 0;
+}
+.match_shop{
+  height:214rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.shop_sel{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width:90rpx;
+}
+.sel_icon{
+  width: 34rpx;
+  height:34rpx;
+}
+
+.shop_info{
+  width:100%;
+  padding:20rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.shop_head{
+  width:120rpx;
+  height:120rpx;
+  margin-right:20rpx;
+}
+
+.shop_inner{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex:3;
+  height: 100%;
+}
+ .shop_people{
+   width: 100%;
+  height:30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items:center;
+  align-content: flex-start;
+}
+.shop_people>image{
+  width:22rpx;
+  height:24rpx;
+  margin-right:10rpx;
+}
+.shop_address{
+  height:30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items:center;
+  align-content: flex-start;
+}
+.shop_address>image{
+  width:20rpx;
+  height:28rpx;
+  margin-right:10rpx;
+} 
+
+.goods_cell{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  height:166rpx;
+}
+.style_cell{
+  padding:20rpx 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 3;
+}
+.goods_cell:last-child .style_cell{
+  border: none;
+}
+
+
+
+.style_img{
+  width:100rpx;
+  height:100rpx;
+  margin-right:20rpx;
+}
+.style_info {
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  flex: 3;
+}
+

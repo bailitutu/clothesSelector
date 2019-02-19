@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "待审核",
+  "usingComponents": {
+    "topSearch": "/components/search/search",
+    "loading": "/components/loading/loading",
+    "noData": "/components/noData/noData"
+  }
+}

@@ -1,0 +1,29 @@
+<!--
+  showLeft : 是否显示左边内容
+  showRightStatus ：是否显示右上角状态
+  showPeo:是否显示人员名称
+  showFooterStatus:是否显示底部状态；
+
+  -->
+
+
+    <view class='shopInfo_compo'>
+             <view class='infoType fs-36 fc-33' wx:if='{{showLeft}}'>{{ leftText }}</view> 
+            <view class='shop_compo'>
+              <image src='{{shopImg}}' class='shop_head'></image>
+              <view class='shop_info'>
+                <view class='shop_name'><text>{{shopName}}</text> <text class='fs-28 fc-main' wx:if='{{showRightStatus}}'>{{currentStatus}}</text></view>
+                 <view class='shop_people' wx-if='{{showPeo}}'>
+                  <image src='/images/shop_peo.png'></image> 
+                  <text class='fs-22 fc-70'>{{shopPeo}} {{shopPhone}}</text>
+                </view> 
+                <view class='shop_address'>
+                    <image src='/images/address_little.png'></image> 
+                  <text class='fs-22 fc-70 one_line'>{{shopAddress}}</text>
+                </view>
+                <view class='shop_status' wx:if='{{showFooterStatus}}'>
+                  <text class='fs-24 fc-70 '>当前状态：</text><text class='fs-28 fc-main'>{{currentStatus}}</text>
+                </view>
+              </view>
+            </view>
+          </view>

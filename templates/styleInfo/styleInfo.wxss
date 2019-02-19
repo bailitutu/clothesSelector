@@ -1,0 +1,41 @@
+/* 款式详情 */
+
+.style_list{
+  padding:0 30rpx;
+  background: #fff;
+  width:100%;  
+}
+
+.style_compo{
+  width:100%;
+  background: #fff;  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding:20rpx 0;
+  height:164rpx;
+  border-bottom:1px solid #e2e2e2;
+}
+.style_compo:last-child{
+  border:none;
+}
+.style_compo>image{
+  width:100rpx;
+  height:100rpx;
+  margin-right:20rpx
+}
+.style_compo .style_info{
+  flex:3;
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: stretch;
+}
+.style_info .style_detail{
+  width:100%;
+}

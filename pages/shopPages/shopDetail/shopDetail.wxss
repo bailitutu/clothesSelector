@@ -1,0 +1,135 @@
+
+.body,.shop_info{
+  padding-bottom:20rpx;
+}
+.shop_info {
+  overflow:hidden;
+}
+.shop_banner{
+  margin:20rpx;
+  height:600rpx;
+}
+.shop_banner>image{
+  width: 100%;
+  height:100%;
+}
+
+.shop_info_cell{
+  background: #fff;
+  padding-bottom:10rpx;
+}
+
+.shop_p .shop_p_icon{
+  width:60rpx;
+  height:30rpx;
+  padding-right:20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop_address{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: stretch;
+}
+.shop_address>text{
+  flex: 1;
+}
+
+
+.full_two_item{
+  width:100%;
+  height:140rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding:20rpx 0 ;
+}
+.full_two_item .full_two_cell{
+  width:50%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.full_two_item .full_two_cell:first-child{
+  border-right:1px solid #e2e2e2;
+}
+
+
+
+.inner_two_item{
+  padding:20rpx;
+}
+.inner_two_cell{
+  background: #fff;
+  height:156rpx;
+  flex:1;
+  padding:20rpx 0;
+}
+.inner_two_cell:first-child{
+  margin-right:20rpx;
+}
+
+.history_sec .history_title{
+  height: 88rpx;
+  padding:0 40rpx;
+}
+.picker_cell{
+  width:auto;
+  height:60rpx;
+  border-radius: 30rpx;
+  border:1px solid #03A863;
+  padding:0 10rpx;
+  overflow: hidden;
+}
+.month_picker{
+  padding:20rpx;
+}
+
+.go_item{
+  height: 88rpx;
+  padding:0 30rpx;
+}
+.icon_go{
+  width:16rpx;
+  height:30rpx;
+}
+
+
+/* 款式分类、商户定位 */
+.tag_compo{
+  background: #fff;
+}
+.tag_compo .tag_compo_title{
+  height:88rpx;
+  padding:20rpx;
+}
+
+.tag_list{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: space-around;
+  flex-wrap: wrap;
+  padding:0 30rpx 30rpx;
+}
+.tag_list .tag_cell{
+  padding:0 20rpx;
+  height:44rpx;
+  margin:30rpx 15rpx 0;
+  line-height: 44rpx;
+  min-width: 92rpx;
+  text-align: center;
+  font-size:22rpx;
+  color:#707070;
+  border:1rpx solid #e2e2e2;
+  border-radius: 16rpx;
+}

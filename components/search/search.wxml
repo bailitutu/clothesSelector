@@ -1,0 +1,8 @@
+<view class='search_compo'>
+  <view class='search_inner'>
+    <view class='search_btn' catchtap='searchTap' form-type='submit' data-able='{{isable}}'>
+      <image src='/images/search_compo_icon.png'></image>
+    </view>
+    <input type='text' class='search_input fc-fff fs-32' confirm-type='search' placeholder-class='fc-fe fs-28' placeholder='{{holderText}}' value='{{searchVal}}' bindinput='changeVal'  ></input>
+  </view>
+</view>

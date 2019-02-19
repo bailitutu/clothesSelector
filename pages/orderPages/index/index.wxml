@@ -1,0 +1,84 @@
+ <wxs src="../../filter/filter.wxs" module="filter" /> 
+<import src="/templates/styleInfo/styleInfo.wxml"/>
+<view class='body body_flex'>
+    <topSearch id='topSearch' style='height:76rpx' holderText='搜索名称' bind:searchTap="searchOrder"></topSearch>
+    <topTab id='topTab' tabOne='配货' tabTwo='调货' class='bb'  bind:tabTap='tabTap'></topTab>
+    <!-- 配货 -->
+    <view class='filter_item bsf' wx:if='{{ current == 1 }}'>
+      <view class='filter_cell' catchtap='pickingFilter'>
+          <text class='filter_type fs-28 fc-33'>{{pickingTypeList[pickingType]}}</text>
+          <image src='/images/down.png'></image>
+      </view>
+    </view>
+    <!-- 调货 -->
+    <view class='filter_item bsf' hidden='{{ current != 2 }}'>
+      <view class='filter_cell' catchtap='deployFilter'>
+          <text class='filter_type fs-28 fc-33'>{{deployTypeList[deployType]}}</text>
+          <image src='/images/down.png'></image>
+      </view>
+    </view>
+    <view class='list_item' id='list_item' >
+      <scroll-view class='list_scroll' scroll-y='true' style='height:{{scrollH}}px;' hidden='{{ current != 1 }}'  bindscrolltolower='morePickingData'>
+          <noData wx:if='{{pickingNoData}}'></noData>  
+        <view class='list_cell ' wx:for='{{pickingData}}' wx:key='pick' wx:for-index='pickingIndex' catchtap='checkDetail' data-ordertype='1' data-orderId='{{item.orderId}}' >
+            <view class='bra oh'>
+              <shopInfo 
+              shopName='{{item.collectBusName}}' 
+              shopImg ='{{item.collectBusHead}}'
+              shopAddress='{{item.collectBusAddress}}'
+              currentStatus='{{filter.orderStatus(item.orderStatus)}}'
+              showFooterStatus= 'true'
+              ></shopInfo>   
+                <view>
+                  <colla wx:if='{{item.orderStatus != 0 }}'  isNoBorder='true'  title='{{item.depotName }}' > 
+                    <view class='style_list bb'>
+                      <template wx:for='{{item.styleList}}' wx:for-item='style' wx:key='styleIndex' is="styleInfo" data="{{...style}}"/>
+                    </view>   
+                  </colla>
+                </view>
+                <view class='foo_tip fs-28 fc-70'>{{ item.loginstics}} {{item.loginsticsNumber}}</view>
+            </view>
+        </view>  
+
+        <loading isShow='{{pickingNoData}}' noMore='{{pickingNoMore}}'></loading>
+      </scroll-view>
+
+      <scroll-view class='list_scroll' scroll-y='true' style='height:{{scrollH}}px;' hidden='{{ current != 2 }}' bindscrolltolower='moreDeployData'>
+          <noData wx:if='{{deployNoData}}'></noData>  
+        <view class='list_cell' wx:for='{{deployData}}' wx:key='deploy'  catchtap='checkDetail' data-ordertype='2' data-orderId='{{item.orderId}}'>
+            <view class='bra oh'>
+              <shopInfo  
+                    showLeft='true' 
+                    leftText='发货方'
+                    shopName='{{item.senderInfo.senderName}}' 
+                    shopImg ='{{item.senderInfo.senderHead}}'
+                    shopAddress='{{item.senderInfo.senderAddress}}'
+                    showPeo = 'true'
+                    shopPeo = '{{item.senderInfo.senderPeople}}'
+                    shopPhone = '{{item.senderInfo.senderPhone}}'
+                ></shopInfo>   
+                <view class='bb'></view> 
+                <shopInfo 
+                    showLeft='true' 
+                    leftText='收货方'
+                    shopName='{{item.receiverInfo.receiverName}}' 
+                    shopImg ='{{item.receiverInfo.receiverHead}}'
+                    shopAddress='{{item.receiverInfo.receiverAddress}}'
+                    showPeo = 'true'
+                    shopPeo = '{{item.receiverInfo.receiverPeople}}'
+                    shopPhone = '{{item.receiverInfo.receiverPhone}}'
+                ></shopInfo> 
+
+                <colla wx:if='{{item.orderStatus != 0 }}'  title='{{filter.orderStatus(item.orderStatus)}}' showStatus='true' > 
+                  <view class='style_list'>
+                    <template wx:for='{{item.styleList}}' wx:for-item='deploy' wx:key='deployIndex' is="styleInfo" data="{{...deploy}}"/>
+                  </view>  
+                </colla>
+            </view>
+        </view>
+          
+        <loading isShow='{{deployNoData}}' noMore='{{deployNoMore}}'></loading>
+
+      </scroll-view> 
+    </view>
+</view>

@@ -1,0 +1,39 @@
+<view class='body body_flex'>
+  <view class='bsf'>
+   <topTab  id='topTab' tabOne='成交率' tabTwo='热卖款式'   bind:tabTap='tabTap'></topTab>
+  </view>
+  <!-- 成交率 -->
+  <view class='content'  hidden='{{current !=1 }}'>
+  
+
+    <view class='title fc-33 fs-32' wx:if='{{!peoNoData && !rateNoData }}' >昨日成交图</view>
+      <noData wx:if='{{peoNoData && rateNoData }}'></noData>
+    
+    <view class='item ' wx:if='{{!peoNoData}}'>
+      <view class='chart_item'>
+        <canvas style="width: 100%; height: 100%;"  id='peoCanvas' canvas-id="peoCanvas" ></canvas> 
+      </view>
+    </view>
+    <view class='item' wx:if='{{!rateNoData}}'>
+      <view class='chart_item'>
+        <canvas style="width: 100%; height: 100%;" canvas-id="rateCanvas"></canvas>
+      </view>
+    </view>
+  </view>
+  <!-- 热卖款式 -->
+  <view class='hot_content body_flex' hidden='{{current !=2 }}'>
+    <noData wx:if='{{hotNoData}}'></noData>            
+    <view class='title fc-33 fs-32' wx:if='{{!hotNoData}}' >昨日热卖款式</view>
+    <view class='hot_item item bg-white mt-20' wx:if='{{!hotNoData}}'>
+      <canvas style="width: 100%; height:100%;" id="hotCanvas"  canvas-id="hotCanvas" ></canvas>
+    </view>
+    <scorll-view scroll-y='true' class='style_list bg-white mt-20 mb-20' wx:if='{{!hotNoData}}'>
+      <view class='cell style_li' wx:for='{{list}}' wx:key='index' >
+        <view class='style_cell s_row'> 
+          <view class='color_box' style='background:{{item.styleColor}}'></view>
+          <text class='fc-70 fs-28'>{{item.styleName}} {{item.number}}--{{item.percent}}%</text>
+        </view>
+      </view>
+    </scorll-view>
+  </view>
+</view>

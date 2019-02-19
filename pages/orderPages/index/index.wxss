@@ -1,0 +1,57 @@
+@import '/templates/styleInfo/styleInfo';
+.filter_item{
+  height:88rpx;
+  background: #fff;
+}
+
+.filter_item .filter_cell{
+  margin-left: 40rpx;
+  width:160rpx;
+  height:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.filter_item .filter_cell>image{
+  width: 26rpx;
+  height:14rpx;
+}
+.filter_item .filter_cell .filter_type{
+  width:120rpx;
+  text-align: center;
+}
+
+.list_item{
+  height:100%;
+  width: 100%;
+  flex: 2;
+  display: flex;
+  overflow:hidden;
+}
+.list_scroll{
+  width:100%;
+  white-space: nowrap;
+}
+.list_cell{
+  width:100%;
+  padding:0 20rpx;
+  margin-top:20rpx;
+  overflow:hidden;
+}
+.list_cell:last-child{
+  padding-bottom: 20rpx;
+}
+
+
+
+/* 底部快递信息 */
+.foo_tip{
+  height: 88rpx;
+  padding:0 30rpx;
+  background: #fff;
+  line-height: 88rpx;
+}
+
+
+

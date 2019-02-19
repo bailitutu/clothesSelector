@@ -1,0 +1,32 @@
+.style_info{
+  padding:20rpx 20rpx 0;
+}
+
+.styleImg{
+  margin:0;
+  width:100%;
+  height:600rpx;
+}
+
+.style_cell{
+  height:180rpx;
+  padding:20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: stretch;
+}
+.style_cell .s_row{
+  width:100%;
+}
+.title{
+  height:88rpx;
+  padding:0 40rpx;
+}
+.num_cell,.total_item{
+  height:88rpx;
+}
+.num_cell:last-child{
+  border:none;
+}

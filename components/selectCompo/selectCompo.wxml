@@ -1,0 +1,14 @@
+  <view class='sec_last'>
+    <text class='fc-70 fs-28'>{{title}}</text>
+    <view class='sel_cell'>
+      <picker bindchange="bindPickerChange"  value="{{index}}" range="{{data}}">
+          <view class="picker fc-b2 fs-28" hidden='{{isShow}}' >
+              请选择
+          </view>
+           <view class="picker fc-70 fs-28" hidden='{{!isShow}}' >
+              {{data[index]}}
+          </view> 
+        </picker>
+      <image class='icon_go' src='/images/Shape.png'></image>
+    </view>
+  </view>

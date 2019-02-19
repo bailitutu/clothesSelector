@@ -1,0 +1,62 @@
+@import '../common/common';
+.footer_item{
+  height:88rpx;
+  width:100%;
+  padding:0 30rpx;
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index: 1000;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
+}
+.footer_item .sel_all{
+  height:100%;
+  width:156rpx;
+  padding:0 20rpx;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.footer_btn{
+  border-radius: 30rpx;
+  color:#03a863;
+  margin-left:5rpx;
+  margin-right:5rpx;
+  height:60rpx;
+  padding:0 20rpx;
+  font-size:28rpx;
+  background: #fff;
+  line-height: 58rpx;
+  text-align: center;
+}
+.footer_btn.li{
+  background: #03a863;
+  color:#fff;
+  border:1px solid #fff;
+}
+.footer_btn.disable{
+  background: #b2b2b2;
+  color:#fff;
+}
+.sel_icon{
+  width: 34rpx;
+  height:34rpx;
+}
+.s_row{
+  flex: 3;
+  width:100%;
+  display: flex;
+  justify-content:space-between;
+  flex-direction: row;
+  align-items: center;
+  align-content: flex-end;
+}
+.footer_btn.footer_btn_del{
+  align-self: flex-start;
+}

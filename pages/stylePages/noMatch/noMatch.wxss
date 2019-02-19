@@ -1,0 +1,19 @@
+@import '/templates/footerItem/footerItem';
+@import '../hasMatch/hasMatch';
+
+.goods_footer{
+  height:88rpx;
+}
+.wl{
+  width:50%;
+}
+.style_img{
+  width:120rpx;
+  height:120rpx;
+  margin-right:20rpx;
+}
+.editBtn{
+  height: 100%;
+  padding:0 10rpx;
+}
+

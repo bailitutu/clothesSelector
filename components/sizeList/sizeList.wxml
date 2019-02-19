@@ -1,0 +1,19 @@
+  <view class='sizeList_compo' >
+      <view class='size_title' catchtap='showTap'>
+        <view class='size_color'>
+            <text class='color_label' style='background:{{ cell.color}};'></text>
+            <text class='fc-33 fs-28'>{{ cell.colorName}}</text>
+        </view>
+        <view class='size_total'>
+          <view class='sizeNum fc-70'> 合计件数：<text class='fc-33'>{{total}}件</text></view>
+          <image src='/images/down.png' class='{{ isShow ? "rotate" : "" }}'></image>
+        </view>
+      </view>
+      <view class='sizeList_inner' hidden='{{!isShow}}'>
+        <view class='size_list_cell fs-28 bb' wx:for='{{cell.sizeList}}' wx:key='sizeKey' wx:for-item='size' > 
+          <text class='fc-70 '>{{size.name}}   {{size.number}}</text>
+          <text class='fc-33'>{{size.num}}件</text>
+        </view>
+      </view>
+
+    </view>

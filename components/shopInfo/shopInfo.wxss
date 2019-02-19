@@ -1,0 +1,82 @@
+@import "../common/common";
+.shopInfo_compo{
+  background: #fff;
+  width: 100%;
+  height:170rpx;
+  padding:20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: center;
+  border-bottom:1px solid #e2e2e2;
+}
+ .shopInfo_compo:last-child{
+  border-bottom:none;
+} 
+.shopInfo_compo .infoType{
+  width:130rpx;
+  height:100%;
+  line-height: 130rpx;
+}
+.shop_compo{
+  flex:3;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+.shop_compo .shop_head{
+  width:120rpx;
+  height:120rpx;
+  border-radius: 12rpx;
+  margin-right:20rpx;
+}
+.shop_compo .shop_info{
+  height:100%;
+  flex:3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+}
+.shop_name{
+  font-size:32rpx;
+  color: #333333;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+}
+.shop_people{
+  height:30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items:center;
+  align-content: flex-start;
+}
+.shop_people>image{
+  width:22rpx;
+  height:24rpx;
+  margin-right:10rpx;
+}
+.shop_address{
+  height:30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items:center;
+  align-content: flex-start;
+}
+.shop_address>image{
+  width:20rpx;
+  height:28rpx;
+  margin-right:10rpx;
+}
+.shop_status{
+  line-height: 30rpx;
+}
+

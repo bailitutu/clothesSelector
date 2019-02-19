@@ -1,0 +1,14 @@
+<template name="styleInfo">
+  <view class='style_compo'>
+  <image src='{{styleImg}}'></image>
+  <view class='style_info'> 
+    <view class='fs-28 fc-33'>{{ styleName }}</view>
+    <text class='fs-24 fc-70'>款式编号：{{number}}</text>
+    <view class='style_detail fs-24 s_row fc-70'>
+        <text>数量：<text class='fc-main'>{{num}} 件</text></text>
+        <text>单款单色：<text class='fc-main'>{{colorNum}} 个</text></text>
+        <text>零售价：<text class='fc-red'>￥{{price}}</text>  </text>
+    </view>
+  </view>
+</view> 
+</template>

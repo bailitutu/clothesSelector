@@ -1,0 +1,27 @@
+@import '../common/common';
+.sec_last{
+    height: 88rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+}
+.sel_cell{
+  height:100%;
+  padding-left:30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+}
+.sel_cell picker{
+  height:100%;
+  line-height: 88rpx;
+}
+.sel_cell .picker{
+  margin-right:10rpx;
+  min-width:120rpx;
+  text-align: right;
+  height:100%;
+}

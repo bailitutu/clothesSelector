@@ -1,0 +1,170 @@
+
+
+/* 物流公司信息 */
+.logistic_title{
+  margin:40rpx 0;
+  font-size:28rpx;
+  color: #707070;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding:0 20rpx;
+}
+.logistic_title image{
+  width:44rpx;
+  height:38rpx;
+  margin-right:20rpx;
+}
+
+.logistic_data .data_title{
+  padding:30rpx 20rpx 20rpx; 
+}
+.logisitc_list{
+  width: 100%;
+  padding:0 20rpx 20rpx 78rpx;
+}
+.logisitc_list_cell{
+  width:100%;
+  min-height:114rpx;
+  position: relative;
+}
+.logisitc_list_cell:after{
+  content: "";
+  border-left:1px dotted #e2e2e2;
+  height:70rpx;
+  width:1px;
+  position: absolute;
+  top:40rpx;
+  left:16rpx;
+  z-index: 100;
+}
+
+.logisitc_list_cell:last-child{
+  min-height:none;
+}
+.logisitc_list_cell:first-child .sel_icon{
+  border:none;
+
+}
+.logisitc_list_cell .cell_inner{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+
+}
+.cell_inner .sel_icon{
+  height:34rpx;
+  width:34rpx;
+  margin-right:20rpx;
+  border-radius: 50%;
+}
+.cell_inner .sel_icon image{
+  width:34rpx;
+  height: 34rpx;
+}
+
+.sec_title{
+  font-size:16px;
+  color:#333333;
+  margin:40rpx 0 20rpx;
+  padding:0 20rpx;
+}
+
+.goodsInfo{
+  margin-bottom:20rpx;
+}
+
+/* 商品详情款式详情 */
+.style_compo{
+  width:100%;
+  background: #fff;  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding:20rpx;
+  height:164rpx;
+}
+.style_compo:last-child{
+  border:none;
+}
+.style_compo>image{
+  width:100rpx;
+  height:100rpx;
+  margin-right:20rpx
+}
+.style_compo .style_info{
+  flex:3;
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: stretch;
+}
+.style_info .style_detail{
+  width:100%;
+}
+
+
+/* 尺码组件 */
+
+.sizeList_compo{
+  width: 100%;
+  background: #fff;
+}
+.sizeList_compo .size_title{
+  height:88rpx;
+  border-top:1px solid #e2e2e2;
+  border-bottom:1px solid #e2e2e2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.size_color{
+  height:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.size_color .color_label{
+  width:56rpx;
+  height: 56rpx;
+  margin:0 20rpx;
+}
+.size_total{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 20rpx;
+}
+.sizeNum{
+  font-size:28rpx;
+}
+.size_total image{
+  height:14rpx;
+  width:26rpx;
+  margin-left:20rpx;
+}
+.sizeList_inner{
+  width:100%;
+  padding:0 20rpx;
+}
+.size_list_cell{
+  width: 100%;
+  height:88rpx;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center;
+}
+.size_list_cell:last-child{
+  border:none;
+}
+
+

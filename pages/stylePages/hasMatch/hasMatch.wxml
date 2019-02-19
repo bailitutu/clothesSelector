@@ -1,0 +1,72 @@
+<view class='body body_flex'>
+  <topSearch id='topSearch' holderText='搜索名称' bind:searchTap="searchOrder"></topSearch>
+
+  <view class='list_item' id='list_item'>
+  <scroll-view  class='match_list' scroll-y='true' style='height:{{scrollH}}px'  bindscrolltolower='moreData'>
+    <noData wx:if='{{noData}}'></noData>  
+    <view class='match_cell bra' wx:for='{{list}}' wx:key='index' catchtap='selectShop' data-index='{{index}}' data-select='{{item.hasSel}}'>
+      <view class='match_shop'>
+          <view class='shop_sel sel_box'>
+              <image class='sel_icon' hidden='{{!item.hasSel}}' src='/images/icon_selected.png'></image> 
+              <image class='sel_icon' hidden='{{item.hasSel}}' src='/images/icon_selected_no.png'></image>
+          </view>
+          <view class='shop_info'>
+              <view class='shop_head bra'> 
+                <image class='full' src='{{item.busHead}}'></image>
+              </view>
+              <view class='shop_inner'>
+                  <view class='fc-33 fs-32'>{{item.busName}}</view>
+                  <view class='fs-24 fc-70'>剩余单款单色： <text class='fc-main'>{{item.colorNum}} 个</text> </view>
+                  <view class='shop_people'>
+                    <image src='/images/shop_peo.png'></image> 
+                    <text class='fs-22 fc-70'> {{item.manageName}} {{item.managePhone}}</text>
+                  </view> 
+                  <view class='shop_address'>
+                      <image src='/images/address_little.png'></image> 
+                      <text class='fs-22 fc-70 address ' >{{item.address}}</text>
+                  </view>
+              </view>
+
+          </view>
+      </view>
+      <view class='match_goods bt'>
+        <view class='goods_cell' wx:for='{{item.styleList}}' catchtap='selectStyle'  wx:key='styleIndex' wx:for-item='style' data-id='{{style.id}}' data-select='{{style.hasSel}}'>
+          <view class='shop_sel sel_box'>
+              <image class='sel_icon'  hidden='{{!style.hasSel}}' src='/images/icon_selected.png'></image> 
+              <image class='sel_icon'  hidden='{{style.hasSel}}' src='/images/icon_selected_no.png'></image>
+          </view>
+          <view class='style_cell bb'>
+             <view class='style_img bra'>
+              <image src='{{style.styleHead}}' class='full'></image>
+             </view>
+             <view class='style_info'>
+                 <view class='fc-33 fs-28'>{{style.styleName}}</view>
+                  <view class='fs-24 fc-70'>颜色：{{style.colorStr}}  </view>
+                  <view class='ss_row'>
+                      <view class='fs-24 fc-70' style='width:220rpx' > 数量：<text class='fc-main'>{{style.styleNum}} 件</text> </view>
+                      <view class='fs-24 fc-70'>零售价： <text class='fc-red'>￥{{style.price}}</text></view>
+                  </view>
+             </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <loading isShow='{{noData}}'  noMore='{{noMore}}'></loading> 
+    
+  </scroll-view>
+  </view>
+  
+</view>
+
+<footerItem 
+    selAll='{{selAll}}'
+     bind:_selAllTap='selectAll' 
+     showBtnOne='{{selectList.length}}'
+     showDel='{{selectList.length}}'
+      bind:_btnOneTap = 'matchFn'
+      bind:_btnTwoTap='placeOrder'
+      bind:_delTap='deleteItem'
+      btnTwoDiable='{{!selectList.length}}'
+      > </footerItem>
+
+ 

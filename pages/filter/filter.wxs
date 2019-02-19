@@ -1,0 +1,39 @@
+var orderStatus = function (text) {
+
+  // 0审核中1待发货2待发货3已收货4交易关闭5调货订单待确认6待付款8未提交
+  var resp;
+  switch (text) {
+    case '0':
+      resp = '审核中';
+      break;
+    case '1':
+      resp = '待发货';
+      break;
+    case '2':
+      resp = '已发货';
+      break;
+    case '3':
+      resp = '已收货';
+      break;
+    case '4':
+      resp = '交易关闭';
+      break;
+    case '5':
+      resp = '待确认';
+      break;
+    case '6':
+      resp = '待付款';
+      break;
+    case '8':
+      resp = '未提交';
+      break;
+    default:
+      resp = '订单异常';
+      break;
+  }
+  return resp;
+};
+
+module.exports = {
+  orderStatus: orderStatus,
+};

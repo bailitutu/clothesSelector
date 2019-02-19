@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "图表分析",
+  "usingComponents": {
+    "noData": "/components/noData/noData",
+    "topTab": "/components/topTab/topTab"
+  }
+}

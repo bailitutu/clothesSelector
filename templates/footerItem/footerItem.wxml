@@ -1,0 +1,14 @@
+<template name="footerItem">  
+  <view class='footer_item bg-main'>
+    <view class='sel_all'>
+       <image class='sel_icon  mr-20' src='/images/icon_selected.png'></image> 
+       <!-- <image class='sel_icon mr-20' src='/images/icon_selected_no.png'></image> -->
+       <text class='fc-fff fs-28'>全选</text> 
+    </view>
+      
+     <view class='footer_btn li '  >删除</view> 
+     <view class='footer_btn' >提交订单</view> 
+      <view class='footer_btn'  >提交订单</view>  
+  </view>
+</template>
+  

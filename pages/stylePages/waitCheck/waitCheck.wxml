@@ -1,0 +1,48 @@
+
+<view class='body body_flex'>
+  <topSearch id='topSearch' holderText='搜索名称' bind:searchTap="searchTap"></topSearch>
+
+  <view class='list_item' id='list_item'>
+    <scroll-view  class='noPass_list'  scroll-y='true' style='height:{{scrollH}}px'>
+    <noData wx:if='{{noData}}'></noData>  
+    <view class='noPass_cell bg-white bra mt-20' wx:for='{{pageData}}' wx:key='check' >
+        <view class='noPass_shop bb'>
+          <view class='shop_name'>
+            <text class='fc-33 fs-32'> 供应商：{{item.supplyName}}</text>
+          </view>
+          <view class='shop_people'>
+            <image src='/images/shop_peo.png'></image> 
+            <text class='fs-22 fc-70'> {{item.supplyPeo}} {{item.supplyPhone}}</text>
+          </view> 
+          <view class='shop_address'>
+              <image src='/images/address_little.png'></image> 
+            <text class='fs-22 fc-70 one_line'>{{item.supplyAddress}}</text>
+          </view>
+
+        </view>
+        <view class='style_list plr-20'>
+         <view class='style_cell bb' wx:for='{{item.styleList}}' wx:key='style' wx:for-item='style'>
+             <view class='style_img'>
+              <image src='{{style.styleImg}}' class='full bra'></image>
+             </view>
+             <view class='style_info'>
+                 <view class='fc-33 fs-28 s_row'><text>{{style.styleName}}</text></view>
+                  <view class='fs-24 fc-70'>颜色：{{style.colorStr}}  </view>
+                  <view class='s_row'>
+                      <view class='fs-24 fc-70 wl'> 单款单色：<text class='fc-main'>{{style.colorNum}} 个</text></view>
+                      <view class='fs-24 fc-70'>数量：<text class='fc-main'>{{style.num}} 件</text></view>
+                      <view class='fs-24 fc-70'>采购价：<text class='fc-red'>￥{{style.price}}</text></view>
+                  </view>
+             </view>
+          </view>
+        </view>
+ 
+    </view>
+
+   <loading isShow='{{noData}}'  noMore='{{noMore}}'></loading> 
+      
+  </scroll-view>
+  </view>
+
+</view>
+

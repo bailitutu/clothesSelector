@@ -1,0 +1,33 @@
+<view class='body'>
+  <view class='color_list bg-white'>
+    <view class='color_cell' wx:for='{{colorList}}' wx:key='color'  catchtap='selectMainColor' data-index='{{index}}'>
+      <view class='color_btn fs-28 fc-fff' style='background:{{item.color || "#000"}}' >{{item.colorName}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='color_pop' hidden='{{!showSub}}'>
+  <view class='mask'></view>
+  <view class='color_box bg-white'>
+    <view class='color_inner'>
+      <view class='color_sel'   wx:for='{{subColorList}}' wx:key='colors' wx:for-item='color' wx:for-index='subColor' >
+        <view class='sel_btn' catchtap='selectColor' data-index='{{subColor}}' data-colorid='{{color.id}}' style='background:{{color.color}}'>
+          <text class='fs-24 {{color.color == "#FFFFFF" ? "fc-33" : "fc-fff"}}'>{{color.colorName}}</text>
+          <image class='' src='/images/colorSel.png' hidden='{{color.id != selColorId}}'></image> 
+        </view>
+      </view>
+      
+    </view>
+    <view class='wx-dialog-footer'>
+      <view class='wx-dialog-btn' catchtap='cancelSel'>取消</view>
+      <view class='wx-dialog-btn' catchtap='submitSel'>确定</view>
+    </view>
+
+  </view>
+
+
+</view>
+
+
+
+

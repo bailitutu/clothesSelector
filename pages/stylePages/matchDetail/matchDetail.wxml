@@ -1,0 +1,50 @@
+
+<view class='body'>
+  <view class='style_info bg-white '>
+      <view class='styleImg bra oh'>
+          <image class='full' src='{{pageInfo.imgUrl}}' mode='aspectFill'></image>
+      </view>
+      <view class='style_cell plr-20'>
+          <view class='fc-33 fs-32'>{{pageInfo.style.styleName}}</view>
+          <view class='fs-28 fc-70'>款式编号：{{pageInfo.style.number}} </view>
+          <view class='s_row fs-28'>
+              <view class='fc-70'> 数量：<text class='fc-main'>{{pageInfo.style.num}} 件</text> </view>
+              <view class='fc-70'> 单款单色：<text class='fc-main'>{{pageInfo.style.colorNum}} 个</text> </view>
+              <view class='fc-70'>零售价：<text class='fc-red'>￥{{pageInfo.style.price || '0.00'}}</text> </view>
+          </view>
+      </view>
+  </view>
+
+  <view class='title s_row'>
+    <text class='fc-33 fs-32'>匹配的店铺</text>
+    <view class='fs-28 fc-33'> 合计：<text class='fc-main'>{{storeList.length}} 家</text> </view>
+  </view>
+  <view class='shop_item plr-20' wx:for='{{storeList}}' wx:key='store' >
+    <view class='bg-white oh bra mb-20' >
+      <shopInfo 
+          shopName='{{item.busName}}' 
+          shopImg ='{{item.busHead}}'
+          shopAddress='{{item.allAddress}}'
+          showPeo = 'true'
+          shopPeo = '{{item.busPeo}}'
+          shopPhone = '{{item.busPhone}}'
+       ></shopInfo>
+
+        <view class='total_item s_row  fs-28 plr-20 bt'>
+          <text class='fc-33'>合计：</text>
+          <text class='fc-33'>{{item.storeColorNum}} 件</text>
+        </view>
+
+        <sizeList wx:for='{{ item.colorList}}'  wx:for-item='colorInfo' cell='{{colorInfo}}'  wx:key='colorIndex'></sizeList>
+
+      <!-- <colla title='合计：{{item.storeColorNum}} 件'>
+        <view class='plr-20'>
+          <view class='num_cell s_row fs-28 bb' wx:for='{{item.colorList}}' wx:key='color' wx:for-item='color'>
+            <text class='fc-70 '>{{color.colorName}}</text>
+            <text class='fc-33'>{{color.colorNum}} 件</text>
+          </view>
+        </view>
+      </colla> -->
+    </view>
+  </view>
+ </view>

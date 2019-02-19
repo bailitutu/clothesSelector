@@ -1,0 +1,116 @@
+<view class='body' wx:if='{{isReady}}'>
+  <view class='shop_info bg-white bb'>
+    <view class='shop_banner bra'>
+      <image src='{{busInfo.busHead}}' mode='aspectFill' ></image>
+    </view>
+    <view class='shop_info_cell s_row plr-40'>
+      <view class='shop_p s_row'>
+        <view class='shop_p_icon'>
+         <image src='/images/icon_shopPeople.png'  style='width:28rpx;height:30rpx;'></image> 
+        </view>
+          <view class='fs-28 fc-33'>联系人：{{busInfo.busPeople}}</view>
+        </view>
+        <view class='fc-70 fs-28'> 单款单色：<text class='fc-main'>{{busInfo.busColorNum}} 个</text></view>
+    </view>
+    <view class='shop_info_cell s_row plr-40'>
+      <view class='shop_p s_row'>
+          <view class='shop_p_icon' >
+            <image src='/images/icon_shopPhone.png' style='width:32rpx;height:30rpx;'></image> 
+          </view>
+          <view class='fs-28 fc-33'>联系电话：{{busInfo.busPhone}}</view>
+      </view>
+    </view>
+    <view class='shop_info_cell s_row plr-40 '>
+      <view class='shop_p shop_address oh'>
+        <view class='shop_p_icon'>
+         <image src='/images/icon_shopAddress.png' style='width:22rpx;height:32rpx;'></image> 
+        </view>
+         <text class='fs-28 fc-33'>{{busInfo.busAddress}}</text>
+      </view>
+    </view>
+  
+  </view>
+
+    <!-- 销量 -->
+
+  <view class='full_two_item' >
+    <view class='full_two_cell'>
+        <view class='fc-main fs-32'>{{busInfo.busDaySalesPrice || '0.00'}} 元</view>
+        <view class='fc-333 fs-24'>今日销售额</view>
+    </view>
+     <view class='full_two_cell'>
+        <view class='fc-main fs-32'>{{busInfo.busDaySalesNum}} 件</view>
+        <view class='fc-333 fs-24'>今日销售量</view>
+    </view>
+  </view> 
+  <view class='go_item s_row bg-white bt' catchtap='checkCollect' >
+    <text class='fc-33 fs-28'>查看统计图表</text>
+    <image class='icon_go' src='/images/Shape.png'></image>
+  </view>
+
+  <!-- 库存 -->
+  <view class='inner_two_item s_row'>
+     <view class='inner_two_cell bra c_col' catchtap='checkLack'>
+        <view class='fc-main fs-32'>{{busInfo.busLackColorNum}} 个</view>
+        <view class='fc-333 fs-24'>缺少单款单色</view>
+    </view> 
+     <view class='inner_two_cell bra c_col' catchtap='checkStock'>
+        <view class='fc-main fs-32'>{{busInfo.busStockWarning}} 款</view>
+        <view class='fc-333 fs-24'>库存预警</view>
+    </view>
+
+  </view>
+
+
+
+  <!-- 历史销售记录 -->
+  <view class='history_sec bg-white'>
+    <view class='history_title s_row bb'>
+        <view class='fs-32 fc-33'>历史销售记录</view>
+        <view class='picker_cell s_row'>
+          <picker class='month_picker' bindchange="checkMonthSales" value="{{index}}" range="{{monthArray}}">
+            <view class="picker fs-24 fc-main">
+              {{monthArray[index]}}
+            </view>
+          </picker>
+          <image src='/images/group.png' style='width:26rpx; height:14rpx;'></image>
+        </view>
+    </view>
+
+    <view class='full_two_item' >
+      <view class='full_two_cell'>
+          <view class='fc-main fs-32'>{{monthSalePrice || '0.00'}} 元</view>
+          <view class='fc-333 fs-24'>月销售额</view>
+      </view>
+      <view class='full_two_cell'>
+          <view class='fc-main fs-32'>{{monthSaleNum}} 件</view>
+          <view class='fc-333 fs-24'>月销售量</view>
+      </view>
+    </view> 
+  </view>
+
+
+  <!-- 款式分类 -->
+  <view class='mt-20' >
+    <colla title='款式分类' noTopBorder='true'>
+    <view class='tag_list bg-white'>
+        <text class='tag_cell' wx:for='{{ busInfo.busStyleLabel}}' wx:key='styleLabelKey' wx:for-item='styleLabel'>{{styleLabel.name}}</text>
+    </view>
+    </colla>
+  </view>
+
+
+  <view class='mt-20' >
+    <colla title='商户定位' noTopBorder='true' >
+    <view class='tag_list bg-white'>
+        <text class='tag_cell' wx:for='{{ busInfo.busLabel}}' wx:key='busLabelKey' wx:for-item='busLabel'>{{busLabel.name}}</text>
+    </view>
+    </colla>
+  </view>
+
+   
+
+
+
+
+</view>

@@ -1,0 +1,60 @@
+<view class='body body_flex'>
+  <topSearch id='topSearch' holderText='搜索名称' bind:searchTap="searchOrder"></topSearch>
+
+  <view class='list_item' id='list_item'>
+    <scroll-view  class='noPass_list' style='height:{{scrollH}}px' scroll-y='true' >
+
+    <noData wx:if='{{noData}}'></noData>  
+
+    <view class='noPass_cell bg-white bra mt-20' wx:for='{{list}}' wx:key='index' >
+        <view class='noPass_head bb' catchtap='selectTap' data-id='{{item.id}}' data-index='{{index}}'>
+          <view class='shop_sel'  >
+            <image class='sel_icon' hidden='{{!item.hasSel}}' src='/images/icon_selected.png'></image> 
+            <image class='sel_icon' hidden='{{item.hasSel}}' src='/images/icon_selected_no.png'></image>
+          </view>
+          <view class='fs-28 fc-70'> 反馈： <text class='fc-red'>{{item.feedback}}</text> </view>
+        </view>
+        <view class='noPass_shop bb'>
+          <view class='shop_name'>
+            <text class='fc-33 fs-32'> 供应商：{{item.supplyName}}</text>
+            <view class='fc-main fs-24' data-id='{{item.id}}' catchtap='editSupply'>修改</view>
+          </view>
+          <view class='shop_people'>
+            <image src='/images/shop_peo.png' class='bra'></image> 
+            <text class='fs-22 fc-70'>{{item.supplyPeo}}  {{item.supplyPhone}}</text>
+          </view> 
+          <view class='shop_address'>
+              <image src='/images/address_little.png'></image> 
+            <text class='fs-22 fc-70 one_line'>{{item.supplyAddress}}</text>
+          </view>
+
+        </view>
+        <view class='style_list plr-20'>
+         <view class='style_cell bb' wx:for='{{item.styleList}}' wx:key='styleindex' wx:for-item='style'>
+             <view class='style_img'>
+              <image src='{{style.styleHead}}' class='full bra'></image>
+             </view>
+             <view class='style_info'>
+                 <view class='fc-33 fs-28 s_row'><text>{{style.styleName}}</text> <text class='fc-main fs-24' data-id='{{style.styleId}}' catchtap='editStyle'>修改</text></view>
+                  <view class='fs-24 fc-70'>颜色:{{style.colorStr}}</view>
+                  <view class='s_row'>
+                      <view class='fs-24 fc-70 wl'> 单款单色：<text class='fc-main'>{{style.colorNum}} 个</text> </view>
+                      <view class='fs-24 fc-70'>采购价:<text class='fc-red'>￥{{style.price}}</text> </view>
+                  </view>
+             </view>
+          </view>    
+        </view>
+
+    </view>
+    <loading isShow='{{noData}}'  noMore='{{noMore}}'></loading> 
+  </scroll-view>
+  </view>
+ 
+</view>
+<footerItem 
+  btnTwoText='删除'
+  btnTwoDiable='{{!delIdArr.length}}'
+  bind:_btnTwoTap='deleteOrder'
+  selAll='{{ list.length == delIdArr.length && list.length>0 }}'
+  bind:_selAllTap='selAllTap'
+></footerItem>

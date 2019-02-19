@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "已通过",
+  "usingComponents": {
+    "topSearch": "/components/search/search",
+    "loading": "/components/loading/loading",
+    "noData": "/components/noData/noData"
+  }
+}

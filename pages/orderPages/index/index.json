@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "订单",
+  "usingComponents":{
+    "topSearch":"/components/search/search",
+    "shopInfo":"/components/shopInfo/shopInfo",
+    "topTab":"/components/topTab/topTab",
+    "colla":"/components/colla/colla",
+    "loading":"/components/loading/loading",
+    "noData":"/components/noData/noData"
+  }
+
+}

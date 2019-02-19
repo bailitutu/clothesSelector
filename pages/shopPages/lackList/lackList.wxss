@@ -1,0 +1,19 @@
+.list_sec{
+  width:100%;
+  white-space: nowrap;
+}
+.list_item{
+  height:100%;
+  width: 100%;
+  flex: 2;
+  display: flex;
+}
+.list_inner{
+  margin:20rpx 20rpx 0;
+}
+.list_sec .list_cell{
+  height:88rpx;
+}
+.list_sec .list_cell:last-child{
+  border:none;
+}

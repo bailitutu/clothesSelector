@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "商户",
+  "usingComponents":{
+    "shopInfo": "/components/shopInfo/shopInfo",
+    "loading": "/components/loading/loading",
+    "noData": "/components/noData/noData"
+
+  }
+}
